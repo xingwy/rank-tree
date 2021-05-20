@@ -2,7 +2,7 @@ const { Rank } = require('../lib');
 
 const assert = require('chai').assert;
 
-describe('#trange', function() {
+describe('#range count', function() {
     beforeEach(function () {
     });
     

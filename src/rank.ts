@@ -143,7 +143,7 @@ export class RankTree {
         if (!prev) {
             return list;
         }
-        if (maxS = -1) {
+        if (maxS == -1) {
             maxS = Infinity;
         }
         this._LDR_selectScoreRange(prev, list, minS, maxS);
@@ -154,7 +154,7 @@ export class RankTree {
      * 获取所有数据
      * @returns 
      */
-    public tgets(): Array<Pair> {
+    public tgetall(): Array<Pair> {
         let list = new Array<Pair>();
         this._LDR_SCORE(this._root, list, Infinity);
         return list;
@@ -197,7 +197,7 @@ export class RankTree {
      * @param index 
      * @returns 
      */
-    public tfindNodeByIndex(index: number): Pair {
+    public tgetwithindex(index: number): Pair {
         let node = this._findIndexStartNode(this._root, index);
         if (!node) {
             return null;

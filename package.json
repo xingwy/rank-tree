@@ -8,7 +8,7 @@
     "test": "test"
   },
   "scripts": {
-    "test": "npm test"
+    "test": "mocha test"
   },
   "repository": {
     "type": "git",
@@ -19,5 +19,8 @@
   "bugs": {
     "url": "https://github.com/xingwy/rank/issues"
   },
-  "homepage": "https://github.com/xingwy/rank#readme"
+  "homepage": "https://github.com/xingwy/rank#readme",
+  "dependencies": {
+    "chai": "^4.3.4"
+  }
 }

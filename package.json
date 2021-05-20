@@ -1,0 +1,23 @@
+{
+  "name": "rank-tree",
+  "version": "1.0.0",
+  "description": "For the structure of sort sets, refer to readme for details",
+  "main": "./lib/index.js",
+  "directories": {
+    "lib": "lib",
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/xingwy/rank.git"
+  },
+  "author": "xingwy",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/xingwy/rank/issues"
+  },
+  "homepage": "https://github.com/xingwy/rank#readme"
+}

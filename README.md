@@ -26,18 +26,18 @@ The following methods are supported.
 
 | name             | opts                          | performance |
 | ---------------- | ----------------------------- | ----------- |
-| tadd             | [k: string, v: number]        |             |
-| trem             | [k: string]                   |             |
-| tincrease        | [k: string, v: number]        |             |
-| treduce          | [k: string, v: number]        |             |
-| trank            | [k: string]                   |             |
-| tcount           | [minV: number, maxV: number]  |             |
-| tcard            | []                            |             |
-| trange           | [minI: number, maxI?: number] |             |
-| trevrangebyscore | [minV: number, maxV?: number] |             |
-| tgetall          | []                            |             |
-| tscore           | [k: string]                   |             |
-| tgetwithindex    | [index: number]               |             |
+| tadd             | [k: string, v: number]        | O(logn)     |
+| trem             | [k: string]                   | O(logn)     |
+| tincrease        | [k: string, v: number]        | O(logn)     |
+| treduce          | [k: string, v: number]        | O(logn)     |
+| trank            | [k: string]                   | O(logn)     |
+| tcount           | [minV: number, maxV: number]  | O(logn)+m   |
+| tcard            | []                            | O(1)        |
+| trange           | [minI: number, maxI?: number] | O(logn)+m   |
+| trevrangebyscore | [minV: number, maxV?: number] | O(logn)+m   |
+| tgetall          | []                            | O(n)        |
+| tscore           | [k: string]                   | O(1)        |
+| tgetwithindex    | [index: number]               | O(logn)     |
 
 ### Details
 
@@ -158,7 +158,7 @@ rank.tcard();  // 4
 
 #### `"tcount"`
 
-Gets the total number of nodes with values between vA and vB.
+Gets the quantity of nodes with values between vA and vB.
 
 ```js
 // tree
@@ -173,29 +173,66 @@ rank.tcount(20, 31);  // 2
 
 #### `"trevrangebyscore"`
 
+Gets the nodes with values between vA and vB.
+
+```js
+// tree
+[a:17, b:20, c:31, d:56]
+
+let rank = new Rank();
+rank.trevrangebyscore(21, 31);  // [c:31]
+rank.trevrangebyscore(20, 31);  // [b:20, c:31]
+```
+
 
 
 #### `"tgetall"`
+
+Gets all nodes.
+
+```js
+// tree
+[a:17, b:20, c:31, d:56]
+
+let rank = new Rank();
+rank.tgetall();  // [a:17, b:20, c:31, d:56]
+```
 
 
 
 #### `"tscore"`
 
+Gets all value with key.
+
+```js
+// tree
+[a:17, b:20, c:31, d:56]
+
+let rank = new Rank();
+rank.tscore("a");  // 17
+```
+
 
 
 #### `"tgetwithindex"`
 
+Gets all value with rank.
 
+```js
+// tree
+[a:17, b:20, c:31, d:56]
+
+let rank = new Rank();
+rank.tscore(2);  // 20
+```
 
 
 
 ## Test
 
-
-
-## Contributing
-
-
+```bash
+npm test
+```
 
 ## License
 

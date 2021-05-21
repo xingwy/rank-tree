@@ -2,6 +2,7 @@
     <h1 align="center">RANK TREE</h1>
     <h4 align="center">A sort set based on red-black tree.</h4>
 </p>
+
 ## Installation
 
 ```bash

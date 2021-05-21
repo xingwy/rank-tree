@@ -1,6 +1,6 @@
 {
   "name": "rank-tree",
-  "version": "1.0.0",
+  "version": "1.0.2",
   "description": "For the structure of sort sets, refer to readme for details",
   "main": "./lib/index.js",
   "directories": {
@@ -22,5 +22,6 @@
   "homepage": "https://github.com/xingwy/rank#readme",
   "dependencies": {
     "chai": "^4.3.4"
-  }
+  },
+  "keywords":["rank", "tree", "key-val", "map"]
 }
